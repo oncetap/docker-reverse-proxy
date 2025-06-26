@@ -1,0 +1,335 @@
+m.7days.ru#%#//scriptlet('remove-class', 'banners-brand', '#page_content')
+momon-ga.com#%#//scriptlet('prevent-addEventListener', 'load', 'document.cookie')
+tv100.com#%#//scriptlet('inject-css-in-shadow-dom', '.i-amphtml-unresolved { display: none !important; }')
+rocketnews24.com,youpouch.com,soranews24.com#%#//scriptlet('remove-attr', 'id', '#div-gpt-ad-header')
+oreno3d.com#%#//scriptlet('set-constant', 'inviewstitial_fired', 'true')
+business-standard.com#%#//scriptlet('adjust-setInterval', '(f-1)', '*', '0.001')
+hanime.tv#%#//scriptlet('set-cookie', 'in_m4', '1')
+tupaki.com#%#//scriptlet('remove-node-text', 'script', 'roadblocker')
+forum.donanimhaber.com#%#//scriptlet('set-session-storage-item', 'pageCount', '$remove$')
+nbc4i.com#%#//scriptlet('prevent-setTimeout', 'firstLoad', '300')
+saveur.com#%#//scriptlet('remove-attr', 'style', '.tadm_ad_unit')
+quiz-facts.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'interstitial-popup')
+m.efuxs.com#%#//scriptlet('set-constant', 'add_h2023', 'noopFunc')
+plus.rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.homad.playerConfig.features.homad.enabled", "false")
+plus.rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.homad.playerConfig.unsupportedAdvertisingConfig.adReinsertion.homad.enabled", "false")
+plus.rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreModule.smartClientCoreApi.globalConfig.adReinsertion.homad.enabled", "false")
+uraaka.com#%#//scriptlet('prevent-addEventListener', 'touchmove', 'preventDefault')
+ragalahari.com#%#//scriptlet('trusted-click-element', 'html:not([class]) > body[bgcolor="#ffffff"] div#rglandingad a[style^="float:right;"]')
+timesnownews.com#%#(()=>{const a=(a,b,c)=>{const d=Reflect.apply(a,b,c),e="div[id^='atf']:empty { display: none !important; }";if("adoptedStyleSheets"in document){const a=new CSSStyleSheet;a.replaceSync(e),d.adoptedStyleSheets=[a]}else{const a=document.createElement("style");a.innerText=e,d.appendChild(a)}return d};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,{apply:a})})();
+ura.news#%#//scriptlet("abort-on-property-read", "yaContextCb")
+sensatsiya.com#%#//scriptlet('remove-in-shadow-dom', '[data-container*="ScriptRoot"]')
+m.proporn.com#%#//scriptlet("set-cookie", "playcnt", "1")
+m.proporn.com#%#//scriptlet("set-cookie", "no_postitial_content", "1")
+timesnownews.com#%#//scriptlet('hide-in-shadow-dom', '.aftAd')
+pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'abp1', '0')
+||pornhub.com^$cookie=views
+tech.hindustantimes.com#%#//scriptlet('hide-in-shadow-dom', '.ampAds')
+healthshots.com#%#//scriptlet('hide-in-shadow-dom', 'div[class^="storyBlock"]:not(.trackWidget), .storyAd')
+m.viptube.com#%#//scriptlet("set-constant", "player.postitialTimeout", "0")
+thestudentroom.co.uk#%#//scriptlet('remove-class', 'fixed_ad', '#header.fixed_ad')
+openloadpro.com,erobanach.com#%#//scriptlet('prevent-addEventListener', '', 'returnAd')
+erobanach.com#%#//scriptlet("abort-on-property-write", "hidden")
+lepoint.fr#%#//scriptlet('remove-class', 'hasStickyHead', 'body.hasStickyHead')
+timesnownews.com#%#//scriptlet('hide-in-shadow-dom', 'div[class^="Layout-mastHeadAd-"], div[class^="Layout-atfAd-"]')
+delfi.lt#%#//scriptlet("set-constant", "adformtag", "emptyArr")
+m.hellporno.com#%#//scriptlet("set-constant", "customAdlistMob", "emptyArr")
+mumsnet.com#%#//scriptlet('remove-class', 'pt-[100px]', '#main-container')
+m.sunporno.com#%#//scriptlet("abort-current-inline-script", "$", "exoMobilePop")
+news.mynavi.jp#%#//scriptlet('prevent-addEventListener', '/^(?:scroll|touchmove|wheel)$/', 'preventDefault')
+mudainodocument.com#%#//scriptlet('prevent-addEventListener', '/^(?:mousewheel|touchmove)$/')
+m.nuvid.*#%#//scriptlet("set-constant", "player.postitialTimeout", "0")
+m.nuvid.*#%#//scriptlet('set-cookie', 'no_postitial_video', '1')
+m.nuvid.*#%#//scriptlet("abort-on-property-read", "mobileAdvPop")
+liquipedia.net#%#//scriptlet('remove-class', 'mobile-sticky-ad-is-active', 'body')
+popcornnews.ru#%#//scriptlet('remove-in-shadow-dom', '.i-amphtml-unresolved')
+m.timesofindia.com#%#//scriptlet('hide-in-shadow-dom', '.ad1')
+idaprikol.ru#%#//scriptlet('remove-attr', 'data-universal-link', 'body')
+mediafire.com#%#//scriptlet("set-constant", "InfCustomSTAMobileFunc", "noopFunc")
+hindustantimes.com#%#//scriptlet('hide-in-shadow-dom', '.storyAd, .storyAd + .slideSection')
+gadgetsnow.com#%#//scriptlet('hide-in-shadow-dom', 'amp-fx-flying-carpet[height="300px"], amp-iframe[src^="https://timesofindia.indiatimes.com/affiliate_new.cms?"]')
+m.hd21.com#%#//scriptlet("set-constant", "player.postitialTimeout", "0")
+m.hd21.com#%#//scriptlet('set-cookie', 'no_postitial_video', '1')
+m.hd21.com#%#//scriptlet("abort-on-property-read", "mobileAdvPop")
+||straitstimes.com/sites/all/themes/custom/bootdemo/js/ads_checker.js
+straitstimes.com#%#//scriptlet("abort-current-inline-script", "bindPostitial")
+zoomtventertainment.com#%#//scriptlet('hide-in-shadow-dom', '.amp-flying-carpet-text-border, amp-fx-flying-carpet')
+aol.com#%#//scriptlet('hide-in-shadow-dom', 'div[class^="AdItem-components-adPlaceholder"]')
+m-timesofindia-com.cdn.ampproject.org#%#//scriptlet('hide-in-shadow-dom', 'div.as_heading > .pdTop_2 > div[id^="ss-"]')
+m.economictimes.com#%#//scriptlet('set-cookie', 'inter', '1')
+supleks.jp#%#//scriptlet('abort-current-inline-script', 'document.getElementsByClassName', 'adBlocked')
+moneycontrol.com#%#//scriptlet("set-constant", "initializeInterstitial", "noopFunc")
+m.iyf.tv#%#//scriptlet("adjust-setInterval", "isPeriodic", "", "0.02")
+www.ixbt.com#%#//scriptlet('remove-class', 'branding', 'body[id="pagebody"]')
+interxh.site,xhaccess.com,xhofficial.com,seexh.com,taoxh.life,xhamster42.desi,xhvid.com,xhtab2.com,xhamster20.desi,xhamster19.desi,xhwebsite2.com,xhamster18.desi,xhadult3.com,xhadult2.com,xhmoon5.com,xhwide1.com,xhamster3.com,xhplanet2.com,megaxh.com,xhamster16.*,hamsterix.*,xhamster.com,xhamster2.com,xhamster7.com,xhamster8.com,xhamster9.com,xhamster10.com,xhamster12.com,xhamster13.*,xhamster14.com,xhamster15.com,xhamster17.com,xhamster18.com,xhamster19.com,xhamster1.desi,xhamster2.desi,xhamster3.desi,xhamster4.desi,xhamster20.com,xhamster22.com,xhamster23.com,xhamster25.com,xhamster26.com,xhamster27.com,openxh.com,xhamster31.com,xhamster32.com,xhamster34.com,xhamster38.com,xhamster5.desi,xhopen.com,openxh1.com,xhamster39.com,xhamster40.com,xhamster.one,xhamster.desi,stripchat.com#%#//scriptlet('set-cookie-reload', 'popSeen', 'true')
+gotporn.com#%#//scriptlet("set-constant", "PopUnder.bindEvent", "noopFunc")
+m.tnaflix.com#%#//scriptlet("set-constant", "exoUrl", "undefined")
+m.tnaflix.com#%#//scriptlet("set-constant", "organicPop", "undefined")
+m.drtuber.com#%#//scriptlet("abort-on-property-read", "mobileAdvPop")
+pornhd.com#%#//scriptlet("abort-on-property-read", "popUnderUrl")
+tube8.com#%#//scriptlet('trusted-click-element', 'a[href].continue-to-video')
+financial-field.com#$#body.jackbanner { margin-top: 0 !important; padding-bottom: 0 !important; }
+redgol.cl#$#header { top: 0 !important; }
+lapaginamillonaria.com#$#header { top: 0 !important; }
+m.yeniakit.com.tr#$#.dfp { display: none !important; }
+m.yeniakit.com.tr#$#.gallery-page { min-height: 2630px !important; }
+c5n.com#$#.header-sticky { top: 0 !important; }
+c5n.com#$#body { padding-top: 51px !important; }
+pulzo.com#$#.container-headband-new { margin-top: 0 !important; }
+ppe.pl#$#a.opera-bar { display: none !important; }
+ppe.pl#$#a.opera-bar + .navbar-wrapper { top: 0 !important; }
+cultura.uol.com.br#$##main-menu { margin-top: 0px !important; }
+eiga.com#$#@media (max-width: 1024px) { .site-header__header-banner { margin-top: 5rem !important; } }
+timeanddate.com#$##header__wrapper { height: auto !important; }
+unseki.co.jp#$##content_inner { margin-top: 0 !important; }
+unseki.co.jp#$##top { margin-top: 70px !important; }
+unseki.co.jp#$##header { top: 0px !important; }
+depor.com#$#.st-sidebar__container { margin-top: 0 !important; }
+depor.com#$#.header-full { margin-top: 0 !important; }
+tss-tv.co.jp#$#.hns_wrap { min-height: 0 !important; }
+tss-tv.co.jp#$#.tss_spbtmnavi { bottom: 0 !important; }
+balarm.it#$#.main-container#top[style^="margin-top:"] { margin-top: 110px !important; }
+subito.it#$#div[id^="index-module_mobile-navigation"] { height: auto !important; }
+climate-data.org#$##header-holder { padding-top: 0 !important; }
+amoyshare.com#$#.online-mp3 .section-one-content { min-height: auto !important; }
+realsound.jp#$#body.template-attachment:has(#gStickyAd) > .page { padding-top: 0 !important; }
+wealthadvisor.co.jp#$#nav:not(.fixed):not([id]) { top: auto !important; }
+rollingstone.de#$#@media (max-width: 768px) { #page.asmb-page-width-container { margin-top: 40px !important; } }
+hometheaterreview.com#$##div_block-5-101336 { height: auto !important; }
+video.fc2.com#$##body_contents #ad_head_wrap { padding-top: 0 !important; }
+libero.it#$#.box320x1 .hp_header { top: 0 !important; }
+libero.it#$#body > .hp_320x1 { display: none !important; }
+jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed { bottom: 0 !important; }
+imginn.com#$#body { padding-top: 0 !important; }
+kantan.game#$#.c-game-footer-ad { display: none !important; }
+kantan.game#$##game_iframe[style*="min-height: calc"] { min-height: 100% !important; }
+ua-cinema.com#$#.kinoWrapp { margin-top: 46px !important; }
+m.biqiugexx.com#$#body { padding-top: 0 !important; }
+greatfallstribune.com,onlineathens.com,usatoday.com,freep.com#$#.gnt_xmst + div[data-tb-region] { margin: unset !important; }
+amazon.in#$#.ape_interstital-open { overflow: auto !important; }
+connect-living.de#$#.body--mobile { padding-top: 4.375rem !important; }
+connect-living.de#$#.header--mobile { top: 0 !important; }
+m.stv.jp#$#ul.dNewsCards, #dNewsTops ul { margin: 0 !important; }
+kinogo.biz#$#body { margin-top: 0 !important; }
+crosswordsolver.org#$#.header[style*="padding: 80px"] { padding-top: 0 !important; }
+wunderground.com#$#html > body.enable-sda wu-header { margin-top: 0 !important; }
+cnbctv18.com#$#.mobile-bottom-nav { bottom: 0 !important; }
+monamona2525.com#$##im_interstitial { display: none !important; }
+monamona2525.com#$#body { overflow: auto !important; position: static !important; }
+dictionary.com#$#body[class] > div.wrapper { padding-top: 0 !important; }
+kinobar.vip#$?#.has-brand { margin-top: 0 !important; }
+m.hkgolden.com#$#html > body[data-app-lightbox] { overflow: auto !important; }
+gismeteo.ru#$#label[data-title="Объясняем.рф"] { display: none !important; }
+indy100.com#$#@media screen and (max-width: 727px) { .body-description > p { margin-bottom: 0 !important; } }
+financialexpress.com#$#.wp-block-group.auto-header { min-height: auto !important; }
+jeremyfoodie.tw#$##ad-full-page { display: none !important; }
+jeremyfoodie.tw#$#html.show-safari-bottom_menu body { position: static !important; }
+huffpost.com,huffingtonpost.jp#$#div.ad-leaderboard-flex { display: none !important; }
+huffpost.com,huffingtonpost.jp#$#.front-page.nav-sticking .nav__header { transform: unset !important; }
+ign.com#$#.wrapper.articleBody > .page-content { margin-top: 80px !important; }
+emulsive.org#$#html > body { padding-bottom: 0 !important; }
+tweaktown.com#$##content-right { padding: 0px !important; }
+tweaktown.com#$#.footer_bottom { margin: 0px !important; }
+wetter.com#$#main > section + div[class] + div[class] { min-height: auto !important; }
+driveplaza.com#$#.js-adHead { display: none !important; }
+driveplaza.com#$#header.l-header { top: 0 !important; }
+driveplaza.com#$##main-content { margin-top: -50px !important; }
+pogomap.info#$##map { bottom: 0 !important; }
+pogomap.info#$##logobarclose { display: none !important; }
+pogomap.info#$##logobarloop { display: none !important; }
+windowsfaq.net#$#body > .text-center[style="height:280px;"] { height: 1px !important; }
+windowsfaq.net#$#body > .text-center[style="height: 280px;"] { height: 1px !important; }
+matomame.jp#$#.uk-navbar.ads_header_margin { margin-top: 0 !important; }
+slideshare.net#$##ad-root { display: none !important; }
+slideshare.net#$#body > #__next[style*="padding-top:"] { padding-top: 0 !important; }
+tokai-tv.com#$#.headerTop > .inner { padding-top: 20px !important; }
+9to5google.com#$##content { margin-top: 0 !important; }
+gamesisart.ru#$#body > header { transform: none !important; }
+knowyourmeme.com#$#body[data-ad-page-type] { padding-bottom: 0 !important; }
+mangapedia.com#$##fixed_footer { display: none !important; }
+mangapedia.com#$#.PG_Nkeyword article .socialList { bottom: 0 !important; }
+mangapedia.com#$#.PG_Nkeyword #anchorTop  { bottom: 20px !important; }
+mundoxiaomi.com#$#.m-sponsor-masthead { padding-top: 0 !important; }
+withonline.jp#$#body[style*="margin-top:"] { margin-top: 0 !important; }
+diariocorreo.pe#$#section.st-sidebar__container { margin-top: 0 !important; }
+apkmirror.com#$##ezmob-wrapper { display: none !important; }
+apkmirror.com#$#html > body { padding-top: 0 !important; }
+techlusive.in#$#.top-horizontal-banner { height: 0 !important; }
+quora.com#$#body.q-platform--mobile { position: static !important; }
+colombia.com#$#.sticky-top { top: 0 !important; }
+pulzo.com#$##main-pulzo-container { margin-top: 0 !important; }
+pulzo.com#$#.fixedtopnative { top: 0 !important; }
+ddd-smart.net#$##inviewstitial { display: none !important; }
+ddd-smart.net#$#body { overflow: auto !important; }
+maclife.de#$#body.mobile.ads .mobilesticky { min-height: 0px !important; height: 50px !important; top: 0px !important; margin-top: 0px !important; }
+bogmedia.org#$#.fp-player > div[style^="position: absolute;"][style*="z-index"] { display: none !important; }
+eatwell101.com#$##mobi0-sticky { display: none !important; }
+eatwell101.com#$##mobi0-sticky + #custom-menu { top: 0 !important; }
+ameblo.jp#$##_popIn_recommend { min-height: auto !important; }
+comicbook.com#$#body > div.topnav { top: 0 !important; }
+twpkinfo.com#$##map { position: unset !important; }
+moe-online.ru#$#.container-adm1 { height: 0!important; }
+mtb-news.de#$##cb-outer-container { margin-top: 0 !important; }
+vandal.elespanol.com#$#.articulo_wrapper { padding-top: 50px!important; }
+vandal.elespanol.com#$#.contenedor_portada { padding-top: 75px!important; }
+ciudad.com.ar#$##header { height: auto!important; }
+ambito.com#$#.banner-wrapper-header { display: none!important; }
+ambito.com#$#.header-top { top: 0!important; }
+ambito.com#$#body { padding-top: 66px!important; }
+ambito.com#$#.amp-banner-top { display: none!important; }
+ambito.com#%#//scriptlet('remove-class', 'header-logo-banner', 'header')
+bolavip.com#$##top-sticky { display: none!important; }
+bolavip.com#$#.header-top-sticky { top: 0!important; }
+techinsight.jp#$#body[style^="position: fixed"] { position: static !important; }
+jmty.jp#$#.c-tab-bar-controller.with-overlay { padding-bottom: 0 !important; }
+nyahentai.re#$##is_w_area { display: none!important; }
+nyahentai.re#$#html { overflow: visible!important; }
+reuters.com#$#.site-header__show-nav__3po5A .site-header__inner-sticky__1fm3o { top: 0px !important; }
+trailrunner.jp#$#.header .brand { padding-top: 0 !important; }
+veryfreeporn.com#$#.video-block > .headline.mobile-device { padding-top: 0 !important; }
+thestudentroom.co.uk#$#@media (max-width: 980px) { body .panel-main > #topFixedAd ~ #content { padding-top: 0 !important; } }
+gamer.ne.jp#$#.adBillBordNone { min-height: 42px !important; }
+trilltrill.jp#$#.header-GlobalHeader { top: 0 !important; }
+kaluga-poisk.ru#$#.brn-fscreen { display: none!important; }
+kaluga-poisk.ru#$#body { overflow: auto!important; }
+lightningmaps.org#$#.mobile_full #bo_gmap.bo_map_realtime { height: 100% !important; }
+openers.jp#$##interstitial { display: none!important; }
+openers.jp#$#body { overflow: auto !important; }
+m.crank-in.net#$#.ad-area_pr_top { height: 0 !important; min-height: 0 !important; padding: 0 !important; }
+lepoint.fr#$##header-menu-top { top: 0 !important; }
+lepoint.fr#$#body .menu-top_mobile { top: 50px !important; }
+quoka.de#$#.headroom--banner-top { top: 0 !important; }
+phileweb.com#$##sp_article_header { height: auto !important; }
+~hometheater.phileweb.com,phileweb.com#$#body.no-ad-bannerClass-body { padding-top: 100px !important; }
+phileweb.com#$#header.has-topbanner .header-in { height: auto !important; }
+s.kakaku.com#$#body div.subCtsArea { display: none!important; }
+w3schools.com#$#@media (max-width: 727px) { #tryitLeaderboard ~ .trytopnav { top: 0!important; } }
+w3schools.com#$#@media (max-width: 727px) { #tryitLeaderboard ~ #container { top: 48px!important; } }
+javfan.one#$##is_w_area { display: none!important; }
+javfan.one#$#html { overflow: visible!important; }
+kisspress.jp#$##articleDetail.collapse .btnCollapseOpen { bottom: 0 !important; }
+kisspress.jp#$##articleDetail.collapse .btnCollapseOpen::before { bottom: -15vmin !important; }
+oantagonista.uol.com.br#$#@media (max-width: 800px) { body #div-gpt-leaderboard ~ #page { margin-top: 160px !important; } }
+games.app-liv.jp#$#.jack-content { display: none !important; }
+games.app-liv.jp#$#body.jack { padding-top: 12% !important; }
+9gag.com#$#.post-tab-bar__wrapper.fixed[style*="top:"] { top: 48px !important; }
+9gag.com#$#.post-tab-bar__container.sticky[style*="top:"] { top: 48px !important; }
+9gag.com#$##jsid-app .drawer-layout > .content-wrap > .tag-interest-view__header-container[style*="top:"] { top: 0 !important; }
+9gag.com#$##jsid-app > div[style="padding-top: 50px;"] { padding-top: 0 !important; }
+9gag.com#$##jsid-app > div[style^="position: fixed; width:"][style*="top: 50px"] { top: 0 !important; }
+9gag.com#$##jsid-app > div[style^="padding-top:"][style*="padding-top: 146px"] { padding-top: 100px !important; }
+9gag.com#$##jsid-app > div[style^="padding-top:"][style*="padding-top: 98px"] { padding-top: 50px !important; }
+kalerkantho.com#$#.must-header-fixed-sticky { margin-top: 0 !important; }
+brandkagu-outlet.net#$#.flo_head { display: none !important; }
+brandkagu-outlet.net#$#div.uniqset div#Header { padding-top: 0 !important; }
+news.mynavi.jp#$##iframeContent { display: none !important; }
+news.mynavi.jp#$#[style="overflow: hidden;"] { overflow: auto !important; }
+movie.digle.tokyo#$#.p-fixed-menu__button-post-movie[href^="https://t.afi-b.com"] { display: none !important; }
+movie.digle.tokyo#$#.p-fixed-menu__menu-wrapper--post-movie { background-color: #0f0e0e !important; }
+businessinsider.de#$#.header-placeholder-de { height: 60px !important; }
+news.goo.ne.jp#$#div#NR-wrapper-in.cx { min-height: auto !important; }
+matomedane.jp#$##AdvHeader { height: 0 !important; }
+purepeople.com#$##wb_contents { margin-top: 0!important; }
+eurasia.expert#$#.content-page { padding-top: 0!important; }
+eurasia.expert#$##page { padding-top: 0!important; }
+gigafile.nu#$##sp_container > div#main_panel.container[style^="height:"]{ height: 0!important; }
+matomehub.jp#$##AdvHeader { height: 0!important; }
+dailyringtone.com#$#.bottom { bottom: 0!important; }
+dailynk.jp,mudainodocument.com#$##im_interstitial_panel { display: none!important; }
+dailynk.jp,mudainodocument.com#$#body { overflow: auto!important; position: static!important; }
+news.owata-net.com#$#.adnetwork.article-interstitial.overlay { display: none!important; }
+news.owata-net.com#$#html[style="overflow: hidden;"] { overflow: auto!important; }
+coolaler.com#$#.message-inner { display: flex !important; }
+openloadpro.com,jav.direct#$##is_w_area { display: none!important; }
+openloadpro.com,jav.direct#$#.inv_scroll_cancel { overflow: auto !important; height: auto !important; }
+izi.ua#$#div[class^="ProductFooter__root-"] { height: 0 !important; }
+r7.com#$#body.main-r7mobile { margin-top: 50px !important; }
+r7.com#$#body.main-r7mobile .wrapper-mobile-header { height: 50px !important; }
+miurayoshitaka.hatenablog.com#$#.ad-online-afc { position: absolute !important; left: -3000px !important; }
+news.mynavi.jp#$#.articleList-along { min-height: 0 !important; }
+news.mynavi.jp#$#.articleList-related-article { min-height: 0 !important; }
+mag.app-liv.jp#$#.p-overlay--upper-ad { bottom: 0!important; }
+sains.sindonews.com#$#.parallax-non { top: 0 !important; }
+m.formel1.de#$##news-share-block-top { top: 0px !important; }
+netzwelt.de#$#@media only screen and (max-width: 700px) { body > #header { grid-template-rows: 30px 0 55px !important; } }
+netzwelt.de#$#@media only screen and (max-width: 700px) { body > #header ~ #main { margin-top: 80px !important; } }
+leo.org#$#.l-dict-searchbar { top: 0 !important; }
+leo.org#$#.wgt > .wgt-header { display: none !important; }
+teleprogramma.pro#$#div[class^="yt-w amp-wp-inline-"] { padding-top: inherit !important; }
+m.economictimes.com#$##btmNav { min-height: unset !important; }
+scmp.com#$##main-content > .home-page--slide-up { transform: none !important; }
+m.investing.com#$#footer { margin-bottom: -50px !important; }
+wtftime.ru#$#.adaptive_ads { position: absolute!important; left: -3000px!important; }
+pcgames.de#$#.stickyHeader+#loginFormMobileWrapper+.navigation+main { margin-top: 5.5rem !important; }
+www.ixbt.com#$#.mainmenu__container a.menu { margin-top: 0 !important; }
+xhamster.com,xhamster2.com#$#.video-view-ads { display: none!important; }
+xhamster.com,xhamster2.com#$#body { overflow: visible!important; position: static!important; }
+cnews.ru#$#html > body.modal-open div#mobile-banner.modal.mobile-banner { display: none !important; }
+cnews.ru#$#.modal-backdrop { display: none !important; }
+cnews.ru#$#body { overflow: auto !important; }
+scmp.com#$#.top-ad { display: none !important; }
+scmp.com#$#div[class*="page-outer--slide-up"] { -webkit-transform: none !important; -ms-transform: none !important; transform: none !important; }
+amazingribs.com#$##count-container { bottom: 0 !important; }
+more-gamer.com#$#.adPopup { display: none !important; }
+more-gamer.com#$#body { position: unset !important; }
+zmovs.com#$#.holder-rich-media { display: none!important; }
+zmovs.com#$#body { position: inherit!important; }
+m.detik.com#$#body[style^="overflow:"] { overflow: auto!important; height: auto!important; }
+m.detik.com#$#html[style^="overflow:"] { overflow: auto!important; height: auto!important; }
+superomsk.ru#$##backgroundform { display: none!important; }
+superomsk.ru#$##openwindow { display: none!important; }
+superomsk.ru#$#body { overflow: visible!important; }
+trashbox.ru#$#.div_landing {display: block!important;}
+trashbox.ru#$##div_landing_safe.show { display: none!important; }
+winda10.com#$#.prma-close { display: none!important; }
+cukurovaexpres.com#$#body { overflow: visible!important; }
+cukurovaexpres.com#$##mobil_modal_ad { display: none!important; }
+cukurovaexpres.com#$#.modal-backdrop { display: none!important; }
+up.ymgt.xyz#$#.play-wrap > .game { height: 100%!important; }
+magcity74.ru#$#body { overflow: visible!important; }
+magcity74.ru#$#.bmobile { display: none !important; }
+timeanddate.com#$#body.mob > .wrapper > .header__wrapper { height: 0!important; }
+rbc.ru#$#div[class^="banners__mobile"] { display: none!important; }
+rbc.ru#$#body.g-lockscroll { overflow: visible!important; }
+rbc.ru#$#html.g-lockscroll { overflow: visible!important; }
+m.saostar.vn#$#.article-thumb { padding-bottom: 0!important; }
+m.saostar.vn#$##page { top: 0!important; }
+mobiltelefon.ru#$#header { margin-top: 0!important; }
+9ketsuki.info#$##sougo_rss { margin-bottom:280px!important; }
+sammobile.com#$#body > .g-29 + section.content { margin-top: 0!important; }
+sammobile.com#$#body > #home-slider + section.content { margin-top: 0!important; }
+techcrunch.com#$#.mobile-header-nav { top: 0!important; }
+realthaisluts.com#$#.mobile-ads-zone { position: absolute!important; left: -3000px!important; }
+hdmotori.it,hdblog.it#$#.banner_list_container { height:1px!important; margin:0!important; padding: 0!important; }
+m.fanfox.net#$#header > .top-banner { display: block!important; height: 60px!important; }
+m.empflix.com#$##flixPlayer > video { display: block !important; }
+giga.de#$#body.mobile { padding-top: 0!important; }
+gmx.net#$#body > div[class*="has-ad-"] div.base-page__content { bottom: 0!important; }
+skymetweather.com#$#.ui-mobile-viewport { padding-bottom: 0!important; }
+15min.lt#$#.ads { position: absolute!important; left: -3000px!important; }
+factroom.ru#$#.mobile-pop-direct { display: none!important; height: 0!important; }
+deviantart.com#$#div[class*="dp-ad-"] {height: 0!important; width: 0!important; }
+antikor.com.ua$$amp-addthis
+cumhuriyet.com.tr$$div[tag-content="data-delay-ad-request"][max-length="700"]
+businessinsider.in$$div[class="amazon_ad"]
+cnet.com$$div[class="amp-ad"]
+businessinsider.in$$div[class="fc_clmb_ad"]
+$$amp-ad
+tv100.com$$div[class="ad-container"]
+tv100.com$$div[class="content-inside-ad"]
+www-livemint-com.cdn.ampproject.org,livemint.com$$div[class="adHolder"]
+www-livemint-com.cdn.ampproject.org,livemint.com$$div[class="fixadheightbottom"]
+timesnownews.com$$div[id="flyCarpet"]
+timesnownews.com$$div[id="taboolaAds"]
+timesnownews.com,zoomtventertainment.com$$div[class="adv-blocker"]
+zoomtventertainment.com$$div[class="Layout-atfAd-VBh-h"]
+foxsports.com.au,kp.ru$$amp-fx-flying-carpet
+amp.scmp.com$$div[class="inline-advert"]
+amp.scmp.com$$div[class="ad-header-container"]
+amp.scmp.com$$div[class="advert-fly-carpet-container"]
+zn.ua$$div[class="mix_advert_"]
+zoomtventertainment.com$$amp-embed[type="taboola"]
+24tv.ua$$div[class="within-ads"]
+vokrug.tv,dni.ru$$amp-iframe[src="https://news.gnezdo.ru/"]
+cumhuriyet.com.tr,vokrug.tv$$amp-embed[type="engageya"]
+motherless.com$$script[tag-content="awentw.com"][min-length="2000"][max-length="2500"]

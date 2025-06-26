@@ -1,0 +1,97 @@
+mdpr.jp#%#//scriptlet('trusted-set-attr', '#gn-rwd-target-hidden', 'class', 'rewareded')
+mdpr.jp#%#//scriptlet('set-session-storage-item', 'gnrwdfreq', '1')
+@@||js.gsspcln.jp/w/ad_format/reward/gnsrwdmod.js$domain=mdpr.jp
+@@||googletagservices.com/tag/js/gpt.js$domain=mdpr.jp
+@@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=mdpr.jp
+@@||aj1907.online^$app=mobi.zona
+@@||d.applovin.com^$app=ac.hush.app
+@@||a.applovin.com^$app=ac.hush.app
+@@||a.pub.network^$app=com.flightconnections
+@@||googletagservices.com^$app=com.flightconnections
+@@||benelph.de^$app=de.spiegel.android.app.spon
+@@||d0o0d.com^$generichide
+@@||do0od.com^$generichide
+@@||megapornfreehd.com^$generichide
+nan-net.jp,nan-net.com#%#//scriptlet('remove-node-text', 'script', 'adblock')
+nan-net.jp,nan-net.com###adblock_guide_mask
+nan-net.jp,nan-net.com##.adblock_guide_box
+nazology.kusuguru.co.jp,nijimen.kusuguru.co.jp#%#//scriptlet('prevent-setTimeout', 'adBoxEl')
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=nazology.kusuguru.co.jp|nijimen.kusuguru.co.jp
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=nazology.kusuguru.co.jp|nijimen.kusuguru.co.jp
+||chefkoch.de/magazin/sites/default/files/styles/*/public/media/image/*/*_*x*.jpg
+erozine.jp#%#//scriptlet("set-constant", "mobiles", "")
+@@||spad.i-mobile.co.jp/script/adssp.js?$domain=erozine.jp
+@@||spad.i-mobile.co.jp/script/adcore_sp_inline*.js$domain=erozine.jp
+@@||t7z.cupid.iqiyi.com/show2?$xmlhttprequest,domain=m.iqiyi.com
+m.livehindustan.com#$#html { overflow: auto !important; }
+||m.livehindustan.com^$cookie=lh_page_viewd
+m.livehindustan.com#%#//scriptlet("prevent-addEventListener", "scroll", "adBlockerCalled")
+@@||m.wcostream.com/inc/embed/ads.js
+@@||imasdk.googleapis.com/*/ima3.js$domain=player.glomex.com
+@@||m.da.mgtv.com/m/player?_type_object=$domain=m.mgtv.com
+@@||usgamer.net^$generichide
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=anlink.top
+wr.de,wp.de,nrz.de#@#.ad
+@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=thebrickfan.com
+@@||dallasnews.com^$generichide
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=mobile.donanimhaber.com
+@@||publico.pt^$generichide
+@@||synonymbog.com^$generichide
+@@||farmeramania.de^$generichide
+@@||wstream.video/img2/rivcash_banner
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dthforum.com
+@@||smedia2.intoday.in/aajtak_pwapp$script
+||m.eisamay.com/detector.cms
+||samayam.com/detector.cms
+@@||m.beautypageants.in^$generichide
+@@||static.expressbpd.com/rsjs/ads.js
+@@||ads.dainikbhaskar.com/AdTech/ads/ads.js
+@@||m.timesofindia.com/ad-*.cms
+@@||m.timesofindia.com/*ads*.cms
+@@||b.scorecardresearch.com/beacon.js$domain=m.timesofindia.com
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=m.timesofindia.com
+@@||static.chartbeat.com/js/chartbeat.js$domain=m.timesofindia.com
+@@||static.clmbtech.com^$domain=timesofindia.com,script
+@@||tags.crwdcntrl.net/*.js?ns=^$domain=m.timesofindia.com
+@@||tags.crwdcntrl.net/c/*/cc.js?ns=$domain=m.timesofindia.com
+@@||mobi.oui9.com/advertisement.js
+pcmag.com##body > div[style^="position:fixed;top:47%;width:100%;height:auto;z-index:9999;"]
+moroccoworldnews.com#@#.header-ad
+moroccoworldnews.com#@#.custom-ad
+gizchina.com#@#.header-ad
+gizmobolt.com#@#.custom-ad
+gizmobolt.com#@#.header-ad
+blogdoiphone.com#@#.header-ad
+blogdoiphone.com#@#.custom-ad
+westseattleblog.com#@#.custom-ad
+westseattleblog.com#@#.header-ad
+ya.ru##services-feed div.banner
+yandex.*##div[class^="Direct "]
+ya.ru,yandex.*#$?##search-result > li:has(span:contains(/[PРeеkклaаmмaа]{7}/)) { remove: true; }
+ya.ru,yandex.*##.content__left > ul#search-result > li:has(> div.organic > div.OrganicTitle > a[href^="https://ya.ru/search/_crpd/"])
+yandex.*##div[class*="-Card_behavioralDirect"]
+yandex.*##.justifier__col > div.incut
+yandex.*##.tiled-images__items > div[class*="rim-direct-incut"]
+ya.ru,yandex.*#?#.SearchBlock:has(> div.DirectStripe)
+ya.ru,yandex.*##.DirectStripe
+yandex.*##div[id^="Direct"]
+yandex.*#?#.serp-list__items > div.block-search:has(> div.block-search__content > div[id^="Direct"])
+yandex.*#?#div[class$="-SnippetsFeed"] > div[class] + div[class$="Block"]:has(> div[class$="-BlockInner"] > div.DirectStripe)
+yandex.*##html > body div[id^="ADVERT"]
+yandex.*#?#div[class*="Advert"]
+mail.yandex.*##body div.direct
+afisha.yandex.*##.adfox-rubric-branding
+afisha.yandex.*##.afisha-profit-banner
+afisha.yandex.*#?#div[class^="WrapperAdfoxContainer"]
+afisha.yandex.*#?#div[style^="display:"]:matches-attr("/data[a-z0-9-]+/"="/^R-A-/")
+realty.ya.*##div[class^="IndexPage__underFiltersAd"]
+realty.ya.*#?#main > div[class^="Frame"]:has(> div[class*="PostBlocks__ad"])
+realty.ya.ru##.SearchResultsTopAdWithFixedHeight
+realty.ya.ru##.SitesSerp__ad
+realty.ya.ru##.OffersSerp__item_type_ad
+[$path=/q]yandex.*#$?#body.page_qQuestionRoute div#page > div[class]:first-child > div[class]:first-child > section[class*=" "] > div[class] + div > div:not(:has(> div[id^="content-control-"])):not(:has(a[class])) { height: 0 !important; }
+[$path=/q]yandex.*#$?#body.page_qQuestionRoute div#page > div[class]:first-child > div[class]:first-child > section[class*=" "] > div[class] + div + div > div[class] > div:not(:has(> div[id^="content-control-"])):not(:has(a[class])) { height: 0 !important; }
+[$path=/q]yandex.*#$?#body.page_qArticleRoute div#page > div[class]:first-child > div[class]:first-child > section[class*=" "] > div[class] + div + div > span ~ div:not(:has(> div[class] button[data-role="button"] > svg)) { height: 0 !important; }
+turbopages.org##div[class*="type_adfox"]
+turbopages.org##.turbo-advert
+turbopages.org##.page__result > div[class*="type_native"]

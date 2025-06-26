@@ -1,0 +1,79 @@
+x-fastdl-labels: &fastdl-labels
+  - "traefik.enable=true"
+  # Server
+  - "traefik.http.routers.fastdl.entrypoints=http"
+  - "traefik.http.routers.fastdl.rule=Host(`fastdl.domain.tld`)"
+  - "traefik.http.services.fastdl.loadbalancer.server.port=3939"
+  - "traefik.docker.network=proxy"
+  # Load balancing algorithm
+  - "traefik.http.services.fastdl.loadbalancer.sticky=false"
+  - "traefik.http.services.fastdl.loadbalancer.healthcheck.path=/health"
+  - "traefik.http.services.fastdl.loadbalancer.healthcheck.interval=10s"
+  - "traefik.http.services.fastdl.loadbalancer.healthcheck.timeout=3s"
+  # Rate limit
+  - "traefik.http.middlewares.fastdl-ratelimit.ratelimit.average=500"
+  - "traefik.http.middlewares.fastdl-ratelimit.ratelimit.burst=1000"
+  - "traefik.http.middlewares.fastdl-ratelimit.ratelimit.period=1m"
+  # Used middlewares
+  - "traefik.http.routers.fastdl.middlewares=fastdl-ratelimit"
+
+x-fastdl-volumes: &fastdl-volumes
+  - ./app:/app
+  - ./bz2:/bz2
+  - ./data:/data
+  - /home/user/cssds/cstrike:/css:ro
+  - /home/user/hlds/cstrike:/cs16:ro
+
+x-fastdl-dockerbuild: &fastdl-dockerbuild
+  context: .
+  dockerfile: Dockerfile
+
+services:
+  fastdl-1:
+    build: *fastdl-dockerbuild
+    container_name: fastdl-css16-1
+    restart: unless-stopped
+    volumes: *fastdl-volumes
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - proxy
+    labels: *fastdl-labels
+
+  fastdl-2:
+    build: *fastdl-dockerbuild
+    container_name: fastdl-css16-2
+    restart: unless-stopped
+    volumes: *fastdl-volumes
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - proxy
+    labels: *fastdl-labels
+
+  fastdl-3:
+    build: *fastdl-dockerbuild
+    container_name: fastdl-css16-3
+    restart: unless-stopped
+    volumes: *fastdl-volumes
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - proxy
+    labels: *fastdl-labels
+
+  fastdl-compression-worker:
+    build: *fastdl-dockerbuild
+    container_name: fastdl-bz2
+    restart: unless-stopped
+    volumes: *fastdl-volumes
+    environment:
+      - ENABLE_COMPRESSION=true
+      - ENABLE_WATCHER=true
+      - ENABLE_SERVER=false
+      - PYTHONUNBUFFERED=1
+    network_mode: "none"
+
+networks:
+  proxy:
+    external: true

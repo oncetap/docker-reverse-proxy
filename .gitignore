@@ -1,0 +1,11 @@
+beszel_data/
+beszel_socket/
+
+bz2/
+fastdl/data
+
+adguard/work/*
+!adguard/work/data/
+adguard/work/data/*
+!adguard/work/data/filters/
+!adguard/work/data/filters/*

@@ -1,0 +1,67 @@
+/edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
+||safelinkconverter.com^$script,3p
+/adsensebase.js$script
+://api.*/lib/native.wasm$3p
+||rawgit.com/Pocketart/$script,3p
+*$csp=worker-src 'none',domain=lewd.ninja|milujivareni.cz
+/angular8.js
+||fileone.tv^$csp=child-src 'none';frame-src 'self' *;worker-src 'none';
+tasma.ru##+js(aopw, decodeURIComponent)
+||leitor.net^$csp=worker-src 'none';
+shrink-service.it##+js(aopr, WebAssembly)
+*$csp=worker-src 'none',domain=flashx.pw|vidoza.net
+djs.sk##+js(aopr, miner)
+||thevideo.*^$csp=worker-src 'none';
+*$csp=worker-src 'none',domain=powvideo.net
+||potomy.ru^$csp=worker-src 'none'
+*$csp=worker-src 'none',domain=megapastes.com
+||sickrage.ca^$csp=worker-src 'none'
+||sorteosrd.com^$csp=worker-src 'none'
+./M5q5.js$script
+||hostingcloud.*^$3p
+||hdvid.tv^$csp=worker-src 'none'
+||void.cat^$csp=worker-src 'none'
+||dragonballzpolo.*^$csp=worker-src 'none'
+*$csp=worker-src 'none',domain=unblocktheship.org
+steamplay.*##+js(aopw, CoinNebula)
+||revdl.com^$csp=worker-src 'none';
+||firstonetv.*^$csp=worker-src 'none';
+||firstone.*^$csp=worker-src 'none';
+||firstonetv.*^$csp=connect-src 'none';
+||backend.dna-delivery.com^$domain=france.tv|rt.com
+||cdn.streamroot.io/dna-client/$script,domain=prod-player.tf1.fr
+||csgo.xyz^$doc
+||inside-out.xyz^$csp=worker-src 'none'
+||douyucdn.cn/front-publish/stream-sdk-lib-master/dyp2pxp2p_*.js$script,domain=douyu.com
+||msstatic.com/huya/*/p2plib.js$script
+bilibili.com,dandanzan.top,nunuyy.*,v.qq.com##+js(nowebrtc)
+bilibili.com##+js(no-fetch-if, data.bilibili.com)
+bilibili.com##+js(trusted-suppress-native-method, navigator.sendBeacon, '"data.bilibili.com/log/"', prevent)
+||monerominer.rocks/miner-mmr/webmnr.min.js
+||sudonull.com/stop-ru.js
+app.koinly.io##.login-page:style(-webkit-animation: none !important)
+knowyourmeme.com##+js(nosiif, blogherads)
+*$websocket,domain=linuxtracker.org
+||dek5iqd53g59a.cloudfront.net^
+||cdn-prod.securiti.ai/consent/auto_blocking/$domain=xfinity.com
+deviantart.com##+js(aost, Math.sqrt, update)
+duplichecker.com,plagiarismchecker.co,plagiarismdetector.net,searchenginereports.net,smallseotools.com##.icon_animation samp:style(animation: none !important;)
+tapewithadblock.org##+js(rmnt, script, /RegExp\(\'/, condition, RegExp)
+||survey.alchemer.eu/s3/$frame,3p,domain=airforce-technology.com
+meeting.tencent.com##+js(no-xhr-if, /(trace|beacon)\.qq\.com/)
+notion.so##+js(no-fetch-if, splunkcloud.com/services/collector)
+olympics.com##+js(no-fetch-if, event-router.olympics.com)
+ceramic.or.kr##+js(no-fetch-if, hostingcloud.racing)
+timesofindia.indiatimes.com##+js(no-fetch-if, tvid.in/log/)
+duolingo.com##+js(no-xhr-if, excess.duolingo.com/batch)
+study.com##+js(no-xhr-if, /eventLog.ajax)
+wayfair.com##+js(no-xhr-if, t.wayfair.com/b.php?)
+wayfair.com##+js(set, navigator.sendBeacon, noopFunc)
+pandadoc.com##+js(no-fetch-if, segment.io)
+shahid.mbc.net##+js(no-fetch-if, mparticle.com)
+view.ceros.com##+js(no-xhr-if, ceros.com/a?data)
+smallpdf.com##+js(no-fetch-if, pluto.smallpdf.com)
+chatgpt.com##+js(no-fetch-if, method:/post/i url:/^https?:\/\/chatgpt\.com\/ces\/v1\/[a-z]$/)
+chatgpt.com##+js(no-fetch-if, method:/post/i url:ab.chatgpt.com/v1/rgstr)
+barstoolsports.com##+js(no-fetch-if, method:HEAD)
+miro.com##+js(no-xhr-if, /eventhub\.\w+\.miro\.com\/api\/stream/)

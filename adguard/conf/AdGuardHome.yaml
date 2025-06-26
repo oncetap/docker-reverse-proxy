@@ -1,0 +1,375 @@
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:80
+  session_ttl: 720h
+users:
+  - name: username
+    password: hashedpassword
+auth_attempts: 3
+block_auth_min: 1440
+http_proxy: ""
+language: ""
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 53
+  anonymize_client_ip: false
+  ratelimit: 0
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - quic://dns.adguard-dns.com
+    - tls://one.one.one.one
+    - tls://dns.google
+    - tls://base.dns.mullvad.net
+    - tls://dns.opendns.com
+    - tls://dns10.quad9.net
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - 9.9.9.10
+    - 149.112.112.10
+    - 2620:fe::10
+    - 2620:fe::fe:10
+  fallback_dns: []
+  upstream_mode: parallel
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 0
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: false
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: false
+    use_custom: false
+  max_goroutines: 300
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: false
+  local_ptr_upstreams: []
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: true
+  use_http3_upstreams: true
+  serve_plain_dns: true
+  hostsfile_enabled: true
+  pending_requests:
+    enabled: true
+tls:
+  enabled: true
+  server_name: dns.domain.tld
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: true
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+  strict_sni_check: false
+querylog:
+  dir_path: ""
+  ignored: []
+  interval: 2160h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  dir_path: ""
+  ignored: []
+  interval: 24h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
+    name: AdGuard DNS filter
+    id: 1
+  - enabled: false
+    url: https://github.com/mullvad/dns-blocklists/raw/refs/heads/main/output/doh/doh_adblock.txt
+    name: Mullvad DNS Adblock
+    id: 1750264847
+  - enabled: false
+    url: https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/output/doh/doh_privacy.txt
+    name: Mullvad DNS Privacy
+    id: 1750264848
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/badware.txt
+    name: uBlock Badware
+    id: 1750264850
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/privacy.txt
+    name: uBlock Privacy
+    id: 1750264851
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/quick-fixes.txt
+    name: uBlock Quick fixes
+    id: 1750264852
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/unbreak.txt
+    name: uBlock Unbreak
+    id: 1750264853
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-general.txt
+    name: uBlock Ads General
+    id: 1750264854
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-mobile.txt
+    name: uBlock Ads Mobile
+    id: 1750264855
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2020.txt
+    name: uBlock Ads 2020
+    id: 1750264856
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2021.txt
+    name: uBlock Ads 2021
+    id: 1750264857
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2022.txt
+    name: uBlock Ads 2022
+    id: 1750264858
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2023.txt
+    name: uBlock Ads 2023
+    id: 1750264859
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2024.txt
+    name: uBlock Ads 2024
+    id: 1750264860
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters-2025.txt
+    name: uBlock Ads 2025
+    id: 1750264861
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/filters.txt
+    name: uBlock Ads Base
+    id: 1750264862
+  - enabled: true
+    url: https://easylist.to/easylist/easylist.txt
+    name: EasyList
+    id: 1750264863
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/resource-abuse.txt
+    name: uBlock Resource abuse
+    id: 1750264864
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/adservers.txt
+    name: uBlock Mobile Adservers
+    id: 1750264865
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/antiadblock.txt
+    name: AdGuard Mobile Antiadblock
+    id: 1750264866
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/general_extensions.txt
+    name: AdGuard Mobile General Extensions
+    id: 1750264873
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/general_url.txt
+    name: AdGuard Mobile General URL
+    id: 1750264874
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/replace.txt
+    name: AdGuard Mobile Replace
+    id: 1750264875
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/specific_app.txt
+    name: AdGuard Mobile Specific App
+    id: 1750264876
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/specific_web.txt
+    name: AdGuard Mobile Specific Web
+    id: 1750264877
+  - enabled: true
+    url: https://easylist.to/easylist/easyprivacy.txt
+    name: EasyPrivacy
+    id: 1750264880
+  - enabled: true
+    url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext
+    name: Peter Lowe’s Ad and tracking server list
+    id: 1750264881
+  - enabled: true
+    url: https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
+    name: EasyList Cookie Notices
+    id: 1750264882
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/MobileApp/sections/mobile-app_specific.txt
+    name: AdGuard Annoyances Mobile Specific
+    id: 1750264884
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Other/sections/annoyances.txt
+    name: AdGuard Annoyances Other
+    id: 1750264886
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Other/sections/self-promo.txt
+    name: AdGuars Annoyances Other Self-promo
+    id: 1750264887
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Other/sections/tweaks.txt
+    name: AdGuard Annoyances Other Tweaks
+    id: 1750264888
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/antiadblock.txt
+    name: AdGuard Annoyances Antiadblock
+    id: 1750264889
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/popups_general.txt
+    name: AdGuard Annoyances Popups General
+    id: 1750264890
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/popups_specific.txt
+    name: AdGuard Annoyances Popups Specific
+    id: 1750264891
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/push-notifications_general.txt
+    name: AdGuard Annoyances Popups Push Notifications General
+    id: 1750264892
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/push-notifications_specific.txt
+    name: AdGuard Annoyances Popups Push Notifications Specific
+    id: 1750264893
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/subscriptions_general.txt
+    name: AdGuard Annoyances Popups Subscriptions General
+    id: 1750264894
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/subscriptions_specific.txt
+    name: AdGuard Annoyances Popups Subscriptions Specific
+    id: 1750264895
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Widgets/sections/widgets.txt
+    name: AdGuard Annoyances Widgets
+    id: 1750264900
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/annoyances-others.txt
+    name: uBlock Annoyances
+    id: 1750264901
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/annoyances-cookies.txt
+    name: uBlock Annoyances Cookies
+    id: 1750264902
+  - enabled: true
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/refs/heads/master/filters/ubo-link-shorteners.txt
+    name: uBlock Link Shorteners
+    id: 1750285986
+whitelist_filters:
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/allowlist_app.txt
+    name: AdGuard Mobile App Allowlist
+    id: 1750264878
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/MobileFilter/sections/allowlist_web.txt
+    name: AdGuard Mobile Web Allowlist
+    id: 1750264879
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/MobileApp/sections/mobile-app_allowlist.txt
+    name: AdGuard Annoyances Mobile Allowlist
+    id: 1750264885
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/popups_allowlist.txt
+    name: AdGuard Annoyances Popups Allowlist
+    id: 1750264896
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/push-notifications_allowlist.txt
+    name: AdGuard Annoyances Push Notifications Allowlist
+    id: 1750264897
+  - enabled: true
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/AnnoyancesFilter/Popups/sections/subscriptions_allowlist.txt
+    name: AdGuard Annoyances Popups Subscriptions Allowlist
+    id: 1750264898
+user_rules: []
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: UTC
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    ecosia: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites: []
+  safe_fs_patterns:
+    - /opt/adguardhome/work/userfilters/*
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log:
+  enabled: true
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 29

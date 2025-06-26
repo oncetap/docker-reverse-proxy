@@ -1,0 +1,13 @@
+claude.ai#@$?#meta[name="apple-itunes-app"] { remove: true; }
+yourchannel.blog.jp#@##app-follow-banner
+store.playstation.com#@$?#meta[name="apple-itunes-app"] { remove: true; }
+@@||fashion-headline.com/js/jquery.smartbanner.js
+@@||bfn.today/min/*/js/jquery.smartbanner.js
+@@||mafia.ua/js/jquery.smartbanner.js
+@@||mckolomen.ru/js/jquery.smartbanner.js
+@@||rshb.ru/source/js/jquery.smartbanner.js
+24h.m.pchome.com.tw#@##smartbanner.ios
+@@/js/jquery.smartbanner.js$domain=fiyatseyir.com|greyhound.com|amalgama-lab.com|m.halkbank.com.tr|intime.ua|avic.ua|mirage.ru|speedtest.net|energy.de|hermesworld.com|lekvapteke.ru|yalispor.com.tr|metroturizm.com.tr|anadolu.edu.tr|whatpub.com
+@@||cdn.bustracker.utrack.com/js/jquery.smartbanner.js
+teb.com.tr,kicker.de#@##smartbanner.ios
+goodreads.com,kicker.de#@##smartbanner.android

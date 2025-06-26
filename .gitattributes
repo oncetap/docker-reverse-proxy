@@ -1,0 +1,6 @@
+# Convert all line endings to LF on commit regardless of OS
+* text=auto
+
+# Not used but might be in the future
+*.bat text eol=crlf
+*.sh text eol=lf

@@ -1,0 +1,17 @@
+tls:
+  certificates:
+    - certFile: /app.domain.tld.pem
+      keyFile: /app.domain.tld.key
+      stores:
+        - default
+  options:
+    cloudflare-mtls:
+      clientAuth:
+        caFiles:
+          - /cloudflare_mtls.pem
+        clientAuthType: RequireAndVerifyClientCert
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /fullchain.pem
+        keyFile: /privkey.pem
