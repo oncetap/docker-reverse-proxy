@@ -21,6 +21,9 @@ services:
       - "traefik.http.routers.app-secure.tls=true"
       - "traefik.http.routers.app-secure.tls.options=cloudflare-mtls@file"
       - "traefik.http.routers.app-secure.service=app"
+      # HTTPS Redirect
+      - "traefik.http.middlewares.app-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.app.middlewares=app-https-redirect"
 
 networks:
   proxy:
