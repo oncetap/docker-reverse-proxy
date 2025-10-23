@@ -1,0 +1,46 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /home/user/Movies:/media:ro
+    networks:
+      - proxy
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.jellyfin.entrypoints=http"
+      - "traefik.http.routers.jellyfin.rule=Host(`jellyfin.domain.tld`)"
+      # Service
+      - "traefik.http.services.jellyfin.loadbalancer.server.port=8096"
+      - "traefik.http.services.jellyfin.loadbalancer.passhostheader=true"
+      - "traefik.docker.network=proxy"
+      # HTTPS
+      - "traefik.http.routers.jellyfin-secure.entrypoints=https"
+      - "traefik.http.routers.jellyfin-secure.rule=Host(`jellyfin.domain.tld`)"
+      - "traefik.http.routers.jellyfin-secure.tls=true"
+      - "traefik.http.routers.jellyfin-secure.service=jellyfin"
+      # HTTPS Redirect
+      - "traefik.http.middlewares.jellyfin-https-redirect.redirectscheme.scheme=https"
+      # Header middleware
+      - "traefik.http.middlewares.jellyfin-headers.headers.customresponseheaders.x-robots-tag=noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
+      - "traefik.http.middlewares.jellyfin-headers.headers.sslredirect=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.sslhost=jellyfin.domain.tld"
+      - "traefik.http.middlewares.jellyfin-headers.headers.sslforcehost=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.stsseconds=315360000"
+      - "traefik.http.middlewares.jellyfin-headers.headers.stsincludesubdomains=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.stspreload=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.forcestsheader=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.framedeny=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.contenttypenosniff=true"
+      - "traefik.http.middlewares.jellyfin-headers.headers.customresponseheaders.x-xss-protection=1"
+      - "traefik.http.middlewares.jellyfin-headers.headers.customFrameOptionsValue='allow-from https://jellyfin.domain.tld'"
+      # Use middlewares
+      - "traefik.http.routers.jellyfin.middlewares=jellyfin-https-redirect"
+      - "traefik.http.routers.jellyfin-secure.middlewares=jellyfin-headers"
+
+networks:
+  proxy:
+    external: true
