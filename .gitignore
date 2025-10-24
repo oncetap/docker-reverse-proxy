@@ -9,3 +9,6 @@ adguard/work/*
 adguard/work/data/*
 !adguard/work/data/filters/
 !adguard/work/data/filters/*
+
+jellyfin/config
+jellyfin/cache
