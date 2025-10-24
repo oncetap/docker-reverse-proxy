@@ -12,3 +12,5 @@ adguard/work/data/*
 
 jellyfin/config
 jellyfin/cache
+
+wg-easy/wireguard
