@@ -38,6 +38,9 @@ services:
     environment:
       - DOCKER_HOST=tcp://docker-socket-proxy:2375
       - LISTEN=/beszel_socket/beszel.sock
+      - HUB_URL=https://beszel.domain.tld
+      # TOKEN can be retrieved from /settings/tokens
+      - TOKEN=TOKENHERE
       # Replace this PUBLIC_KEY with the Public Key from the Beszel Hub on the Add a System menu.
       - 'KEY=PUBLIC_KEY'
 
