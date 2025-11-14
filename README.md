@@ -10,6 +10,7 @@ These containers are also expected to be run with `sudo` if you're not root, and
 - Docker
 - Docker Compose
 - `sudo docker network create proxy`
+- `sudo docker network create --internal socket-proxy-net`
 - ufw
 - `sudo ufw allow 80/tcp; sudo ufw allow 443; sudo ufw allow 853/tcp`
 

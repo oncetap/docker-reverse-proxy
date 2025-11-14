@@ -34,6 +34,20 @@ services:
       - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+
+  docker-socket-proxy:
+    image: tecnativa/docker-socket-proxy:latest
+    container_name: docker-socket-proxy
+    restart: unless-stopped
+    environment:
+      - CONTAINERS=1
+    networks:
+      - socket-proxy-net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
 networks:
   proxy:
+    external: true
+  socket-proxy-net:
     external: true

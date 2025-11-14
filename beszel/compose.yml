@@ -27,15 +27,22 @@ services:
     image: henrygd/beszel-agent:latest
     container_name: beszel-agent
     restart: unless-stopped
-    network_mode: host
+    # uncomment if you're aware of the risks and still want net monitoring
+    # network_mode: host
+    networks:
+      - proxy
+      - socket-proxy-net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./beszel_socket:/beszel_socket
     environment:
+      - DOCKER_HOST=tcp://docker-socket-proxy:2375
       - LISTEN=/beszel_socket/beszel.sock
       # Replace this PUBLIC_KEY with the Public Key from the Beszel Hub on the Add a System menu.
       - 'KEY=PUBLIC_KEY'
 
 networks:
   proxy:
+    external: true
+  socket-proxy-net:
     external: true
