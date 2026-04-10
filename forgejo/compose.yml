@@ -1,6 +1,6 @@
 services:
   forgejo:
-    image: codeberg.org/forgejo/forgejo:13-rootless
+    image: codeberg.org/forgejo/forgejo:14-rootless
     container_name: forgejo
     user: 1000:1000
     environment:
