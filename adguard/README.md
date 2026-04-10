@@ -3,7 +3,7 @@
 - Apache Tools (`apache-tools`<sup>AUR</sup>)
 
 ## Setup Login
-Generate the hashed password for the `password` field on `conf/AdGuardHome.yaml` with the fommand:
+Generate the hashed password for the `password` field on `conf/AdGuardHome.yaml` with the command:
 ```
 echo $(htpasswd -nbB -C 13 username 'supastrongpasswordcanbe64charactersormore') | sed -e s/\\$/\\$\\$/g
 ```
