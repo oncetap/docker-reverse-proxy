@@ -1,0 +1,61 @@
+services:
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: ntfy
+    command: serve
+    environment:
+      NTFY_BASE_URL: "https://push.example.com"
+      NTFY_BEHIND_PROXY: "true"
+      NTFY_DATABASE_URL: "postgres://ntfy:ntfy@db:5432/ntfy"
+      NTFY_AUTH_DEFAULT_ACCESS: "deny-all"
+      NTFY_ENABLE_LOGIN: "true"
+      NTFY_REQUIRE_LOGIN: "true"
+      NTFY_ATTACHMENT_CACHE_DIR: "/var/cache/ntfy/attachments"
+      NTFY_CACHE_DURATION: "168h"
+      NTFY_ATTACHMENT_FILE_SIZE_LIMIT: "2M"
+      NTFY_ATTACHMENT_TOTAL_SIZE_LIMIT: "250M"
+      NTFY_ATTACHMENT_EXPIRY_DURATION: "24h"
+      NTFY_WEB_PUSH_PUBLIC_KEY: "PUBLICKEYHERE"
+      NTFY_WEB_PUSH_PRIVATE_KEY: "PRIVAYEKEYHERE"
+      NTFY_WEB_PUSH_EMAIL_ADDRESS: "admin@example.com"
+      NTFY_AUTH_USERS: "USERNAMEHERE:PASSWORDHERE:admin"
+      NTFY_AUTH_ACCESS: "*:up*:write-only"
+    restart: unless-stopped
+    networks:
+      - proxy
+      - ntfy-net
+    volumes:
+      - ./attachments:/var/cache/ntfy/attachments
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ntfy.entrypoints=http"
+      - "traefik.http.routers.ntfy.rule=Host(`push.example.com`)"
+      - "traefik.http.middlewares.ntfy-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.ntfy.middlewares=ntfy-https-redirect"
+      - "traefik.http.routers.ntfy-secure.entrypoints=https"
+      - "traefik.http.routers.ntfy-secure.rule=Host(`push.example.com`)"
+      - "traefik.http.routers.ntfy-secure.tls=true"
+      - "traefik.http.routers.ntfy-secure.service=ntfy-server"
+      - "traefik.http.services.ntfy-server.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+
+  db:
+    image: postgres:14
+    container_name: ntfy-db
+    restart: always
+    environment:
+      - POSTGRES_USER=ntfy
+      - POSTGRES_PASSWORD=ntfy
+      - POSTGRES_DB=ntfy
+    networks:
+      - ntfy-net
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+networks:
+  proxy:
+    external: true
+  ntfy-net:
+    external: true
