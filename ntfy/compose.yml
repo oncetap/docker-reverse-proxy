@@ -6,7 +6,7 @@ services:
     environment:
       NTFY_BASE_URL: "https://push.example.com"
       NTFY_BEHIND_PROXY: "true"
-      NTFY_DATABASE_URL: "postgres://ntfy:ntfy@db:5432/ntfy"
+      NTFY_DATABASE_URL: "postgres://ntfy:${DB_PASS}@db:5432/ntfy"
       NTFY_AUTH_DEFAULT_ACCESS: "deny-all"
       NTFY_ENABLE_LOGIN: "true"
       NTFY_REQUIRE_LOGIN: "true"
@@ -45,9 +45,10 @@ services:
     image: postgres:14
     container_name: ntfy-db
     restart: always
+    shm_size: 128mb
     environment:
       - POSTGRES_USER=ntfy
-      - POSTGRES_PASSWORD=ntfy
+      - POSTGRES_PASSWORD=${DB_PASS}
       - POSTGRES_DB=ntfy
     networks:
       - ntfy-net

@@ -14,3 +14,8 @@ Then replace the value `USERNAMEHERE:PASSWORDHERE` from `NTFY_AUTH_USERS` with t
 - Go to [ntfy's official config generator](https://docs.ntfy.sh/config/#config-generator)
 - Toggle `Which features do you want to enable? > Web push` and switch to the new `Web Push` tab.
 - If the `Private key` & `Public key` fields are empty, press `Regenerate keys`. Then, copy and paste the generated private & public keys from the config generator into the respective `NTFY_WEB_PUSH_*` fields.
+
+### Generate password for the database
+```
+echo "DB_PASS=$(openssl rand -base64 36 | tr -d '\n')" >> .env
+```
