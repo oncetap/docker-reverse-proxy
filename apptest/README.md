@@ -13,8 +13,8 @@ Copy the contents of `Origin Certificate` and paste it into `traefik/certs/app.d
 
 ### Authenticated Origin Pulls (mTLS)
 
-Download Cloudflare's CA certificate for Authenticated Origin Pulls from [here](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/zone-level/#1-upload-certificate-to-origin)
-and look for `To use a Cloudflare certificate (which uses a specific CA), download the .PEM file and upload it to your origin.`, click the `download the .PEM file` and move the downloaded file to `traefik/certs/cloudflare_mtls.pem`.
+Download Cloudflare's CA certificate for Authenticated Origin Pulls from [here](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/global/#1-download-the-cloudflare-certificate)
+and look for `Download the Cloudflare authenticated origin pull certificate (.PEM)`, click the that link (or use [this direct link](https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem) instead) and move the downloaded file to `traefik/certs/cloudflare_mtls.pem`.
 
 Finally, `chmod` all the certificate files with the `600` permission:
 ```
