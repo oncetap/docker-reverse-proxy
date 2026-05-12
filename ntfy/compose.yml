@@ -42,7 +42,7 @@ services:
       - "traefik.docker.network=proxy"
 
   db:
-    image: postgres:14
+    image: postgres:18-alpine
     container_name: ntfy-db
     restart: always
     shm_size: 128mb
@@ -53,7 +53,7 @@ services:
     networks:
       - ntfy-net
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql
 
 networks:
   proxy:

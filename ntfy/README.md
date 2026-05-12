@@ -1,7 +1,7 @@
 # Setup
 
 ## Internal network for ntfy and its dedicated postgres db
-`sudo docker network create --internal forgejo-net`
+`sudo docker network create --internal ntfy-net`
 
 ## Modify
 ### Generate `user:pass` for `NTFY_AUTH_USERS` on `compose.yaml`
@@ -18,4 +18,34 @@ Then replace the value `USERNAMEHERE:PASSWORDHERE` from `NTFY_AUTH_USERS` with t
 ### Generate password for the database
 ```
 echo "DB_PASS=$(openssl rand -base64 36 | tr -d '\n')" >> .env
+```
+
+### Upgrade Postgres Database
+```
+# Dump everything from the database to a backup file
+sudo docker compose exec -T db pg_dumpall -U ntfy > pg_backup.sql
+
+# Stop containers
+sudo docker compose down
+
+# Remove old database folder
+sudo rm -rf ./postgres
+
+# Only start the database container
+sudo docker compose up -d db
+
+# Restore database backup from the dump file earlier
+sudo docker compose exec -T db psql -U ntfy < pg_backup.sql
+
+# Start the main container
+sudo docker compose up -d
+```
+
+#### If upgrading to Postgres 18, change the volume mount for `db` in `compose.yml`
+```
+# From
+- ./postgres:/var/lib/postgresql/data
+
+# To
+- ./postgres:/var/lib/postgresql
 ```
