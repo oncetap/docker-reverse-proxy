@@ -10,6 +10,7 @@ Create DNS-only A records on server's public IPv4 address:
 ```
 photos.domain.tld
 photos-api.domain.tld
+photos-s3.domain.tld
 ```
 
 If you uncomment any optional endpoints in `compose.yml`, add a DNS record for those as well:
@@ -57,6 +58,16 @@ After the initialization completes, restart so museum picks up the S3 credential
 ```
 sudo docker compose down && sudo docker compose up -d
 ```
+
+## Configure CORS (required for web client)
+The web client uploads files directly to the S3 endpoint, which requires CORS headers.
+Apply cors.json to each bucket using the AWS CLI:
+```
+. ./.env && for bucket in b2-eu-cen wasabi-eu-central-2-v3 scw-eu-fr-v3; do
+  sudo docker run --rm -v $(pwd)/cors.json:/aws/cors.json -e AWS_ACCESS_KEY_ID="$S3_ACCESS_KEY" -e AWS_SECRET_ACCESS_KEY="$S3_SECRET_KEY" -e AWS_DEFAULT_REGION=garage --network ente-net amazon/aws-cli --endpoint-url http://ente-garage:3900 s3api put-bucket-cors --bucket "$bucket" --cors-configuration file:///aws/cors.json
+done
+```
+This is not needed if you only use the mobile app. The CORS rules only need to be applied once, they persist across container restarts.
 
 ## First signup
 Open `photos.domain.tld` and create your account. Ente requires email verification even without SMTP configured, the verification code is printed to the museum container logs. Retrieve it with:

@@ -1,0 +1,11 @@
+{
+  "CORSRules": [
+    {
+      "AllowedHeaders": ["*"],
+      "AllowedMethods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+      "AllowedOrigins": ["https://photos.domain.tld"],
+      "ExposeHeaders": ["ETag", "Content-Length", "Content-Range", "x-amz-request-id"],
+      "MaxAgeSeconds": 3600
+    }
+  ]
+}

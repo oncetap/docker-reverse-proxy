@@ -1,9 +1,19 @@
 metadata_dir = "/var/lib/garage/meta"
 data_dir = "/var/lib/garage/data"
 
-db_engine = "sqlite"
+# LMDB is the most stable engine for Garage v2.x in production
+db_engine = "lmdb"
+
+# Periodically snapshot metadata for safety
+metadata_auto_snapshot_interval = "6h"
 
 replication_factor = 1
+
+# zstd compression, level 1 is nearly free CPU-wise but saves 10-20% disk
+compression_level = 1
+
+# 128MB RAM buffer to smooth out write spikes on HDD
+block_ram_buffer_max = 134217728
 
 rpc_bind_addr = "[::]:3901"
 rpc_public_addr = "ente-garage:3901"
@@ -12,6 +22,11 @@ rpc_secret = "${GARAGE_RPC_SECRET}"
 [s3_api]
 s3_region = "garage"
 api_bind_addr = "[::]:3900"
+root_domain = ".s3.local"
+
+[s3_web]
+bind_addr = "[::]:3902"
+root_domain = ".web.local"
 
 [admin]
 api_bind_addr = "[::]:3903"

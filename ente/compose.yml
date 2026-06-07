@@ -155,6 +155,8 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    environment:
+      - RUST_LOG=info
     volumes:
       - ./garage.toml:/etc/garage.toml:ro
       - ./garage-meta:/var/lib/garage/meta
@@ -166,7 +168,22 @@ services:
       retries: 10
       start_period: 30s
     networks:
+      - proxy
       - ente-net
+    labels:
+      - "traefik.enable=true"
+      # HTTP
+      - "traefik.http.routers.ente-s3.entrypoints=http"
+      - "traefik.http.routers.ente-s3.rule=Host(`photos-s3.domain.tld`)"
+      - "traefik.http.middlewares.ente-s3-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.ente-s3.middlewares=ente-s3-https-redirect"
+      # HTTPS
+      - "traefik.http.routers.ente-s3-secure.entrypoints=https"
+      - "traefik.http.routers.ente-s3-secure.rule=Host(`photos-s3.domain.tld`)"
+      - "traefik.http.routers.ente-s3-secure.tls=true"
+      - "traefik.http.routers.ente-s3-secure.service=ente-s3-api"
+      - "traefik.http.services.ente-s3-api.loadbalancer.server.port=3900"
+      - "traefik.docker.network=proxy"
 
 networks:
   proxy:
