@@ -50,8 +50,11 @@ jwt:
   secret: ${ENTE_JWT_SECRET}
 
 internal:
+  # hardcoded-ott:
+  # emails:
+  #  - "your@email.com,123456"
   # Get your user ID: sudo docker compose exec postgres psql -U ente -d ente_db -c "SELECT user_id, name FROM users;"
-  admin:
+  # admin:
   # admins:
   #   -
   # disable-registration: true

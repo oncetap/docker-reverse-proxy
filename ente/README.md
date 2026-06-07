@@ -64,12 +64,22 @@ Open `photos.domain.tld` and create your account. Ente requires email verificati
 sudo docker compose logs museum | grep "Verification code"
 ```
 
-If you'd rather use a fixed verification code for convenience (e.g. during initial setup), add this to `museum.yaml.template` before running `generate-config.sh`:
+If you'd rather use a fixed verification code for convenience (e.g. during initial setup), add this to `museum.yaml` under `internal:`:
 ```yaml
 internal:
-  hardcoded-ott: "123456"
+  hardcoded-ott:
+    emails:
+      - "your@email.com,123456"
 ```
-This lets any signup proceed with the code `123456`. Remove it after creating your admin account.
+
+This sets the verification code to `123456` for that specific email. You can also use a suffix-based rule for all emails on a domain:
+```yaml
+internal:
+  hardcoded-ott:
+    local-domain-suffix: "@yourdomain.com"
+    local-domain-value: "123456"
+```
+Remove after creating your admin account.
 
 ## Make yourself admin
 Admin users must be explicitly whitelisted in `museum.yaml`. After signing up, get your user ID from the database (note: emails are encrypted, so use `name` to identify users):
