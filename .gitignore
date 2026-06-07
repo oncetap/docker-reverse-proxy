@@ -14,3 +14,11 @@ jellyfin/config
 jellyfin/cache
 
 wg-easy/wireguard
+
+ente/postgres
+ente/garage-meta
+ente/garage-data
+ente/museum.yaml
+ente/garage.toml
+ente/data
+ente/.env

@@ -1,0 +1,175 @@
+services:
+  museum:
+    image: ghcr.io/ente-io/server
+    container_name: ente-museum
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./museum.yaml:/museum.yaml:ro
+      - ./data:/data:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/ping"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 120s
+    networks:
+      - proxy
+      - ente-net
+    labels:
+      - "traefik.enable=true"
+      # HTTP
+      - "traefik.http.routers.ente-museum.entrypoints=http"
+      - "traefik.http.routers.ente-museum.rule=Host(`photos-api.domain.tld`)"
+      - "traefik.http.middlewares.ente-museum-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.ente-museum.middlewares=ente-museum-https-redirect"
+      # HTTPS
+      - "traefik.http.routers.ente-museum-secure.entrypoints=https"
+      - "traefik.http.routers.ente-museum-secure.rule=Host(`photos-api.domain.tld`)"
+      - "traefik.http.routers.ente-museum-secure.tls=true"
+      - "traefik.http.routers.ente-museum-secure.service=ente-museum-api"
+      - "traefik.http.services.ente-museum-api.loadbalancer.server.port=8080"
+      - "traefik.docker.network=proxy"
+
+  web:
+    image: ghcr.io/ente-io/web
+    container_name: ente-web
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - ENTE_API_ORIGIN=https://photos-api.domain.tld
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      # Photos
+      - "traefik.http.routers.ente-photos.entrypoints=http"
+      - "traefik.http.routers.ente-photos.rule=Host(`photos.domain.tld`)"
+      - "traefik.http.middlewares.ente-photos-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.ente-photos.middlewares=ente-photos-https-redirect"
+      - "traefik.http.routers.ente-photos-secure.entrypoints=https"
+      - "traefik.http.routers.ente-photos-secure.rule=Host(`photos.domain.tld`)"
+      - "traefik.http.routers.ente-photos-secure.tls=true"
+      - "traefik.http.routers.ente-photos-secure.service=ente-web-photos"
+      - "traefik.http.services.ente-web-photos.loadbalancer.server.port=3000"
+      # Accounts, only for passkey 2FA
+      # - "traefik.http.routers.ente-accounts.entrypoints=http"
+      # - "traefik.http.routers.ente-accounts.rule=Host(`ente-accounts.domain.tld`)"
+      # - "traefik.http.middlewares.ente-accounts-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-accounts.middlewares=ente-accounts-https-redirect"
+      # - "traefik.http.routers.ente-accounts-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-accounts-secure.rule=Host(`ente-accounts.domain.tld`)"
+      # - "traefik.http.routers.ente-accounts-secure.tls=true"
+      # - "traefik.http.routers.ente-accounts-secure.service=ente-web-accounts"
+      # - "traefik.http.services.ente-web-accounts.loadbalancer.server.port=3001"
+      # Photos Public albums
+      # - "traefik.http.routers.ente-albums.entrypoints=http"
+      # - "traefik.http.routers.ente-albums.rule=Host(`photos-albums.domain.tld`)"
+      # - "traefik.http.middlewares.ente-albums-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-albums.middlewares=ente-albums-https-redirect"
+      # - "traefik.http.routers.ente-albums-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-albums-secure.rule=Host(`photos-albums.domain.tld`)"
+      # - "traefik.http.routers.ente-albums-secure.tls=true"
+      # - "traefik.http.routers.ente-albums-secure.service=ente-web-albums"
+      # - "traefik.http.services.ente-web-albums.loadbalancer.server.port=3002"
+      # Chromecast support
+      # - "traefik.http.routers.ente-cast.entrypoints=http"
+      # - "traefik.http.routers.ente-cast.rule=Host(`ente-cast.domain.tld`)"
+      # - "traefik.http.middlewares.ente-cast-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-cast.middlewares=ente-cast-https-redirect"
+      # - "traefik.http.routers.ente-cast-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-cast-secure.rule=Host(`ente-cast.domain.tld`)"
+      # - "traefik.http.routers.ente-cast-secure.tls=true"
+      # - "traefik.http.routers.ente-cast-secure.service=ente-web-cast"
+      # - "traefik.http.services.ente-web-cast.loadbalancer.server.port=3004"
+      # Photos / Locker file link sharing
+      # - "traefik.http.routers.ente-share.entrypoints=http"
+      # - "traefik.http.routers.ente-share.rule=Host(`ente-share.domain.tld`)"
+      # - "traefik.http.middlewares.ente-share-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-share.middlewares=ente-share-https-redirect"
+      # - "traefik.http.routers.ente-share-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-share-secure.rule=Host(`ente-share.domain.tld`)"
+      # - "traefik.http.routers.ente-share-secure.tls=true"
+      # - "traefik.http.routers.ente-share-secure.service=ente-web-share"
+      # - "traefik.http.services.ente-web-share.loadbalancer.server.port=3005"
+      # Embedded photo album
+      # - "traefik.http.routers.ente-embed.entrypoints=http"
+      # - "traefik.http.routers.ente-embed.rule=Host(`photos-embed.domain.tld`)"
+      # - "traefik.http.middlewares.ente-embed-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-embed.middlewares=ente-embed-https-redirect"
+      # - "traefik.http.routers.ente-embed-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-embed-secure.rule=Host(`photos-embed.domain.tld`)"
+      # - "traefik.http.routers.ente-embed-secure.tls=true"
+      # - "traefik.http.routers.ente-embed-secure.service=ente-web-embed"
+      # - "traefik.http.services.ente-web-embed.loadbalancer.server.port=3006"
+      # Paste
+      # - "traefik.http.routers.ente-paste.entrypoints=http"
+      # - "traefik.http.routers.ente-paste.rule=Host(`paste.domain.tld`)"
+      # - "traefik.http.middlewares.ente-paste-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-paste.middlewares=ente-paste-https-redirect"
+      # - "traefik.http.routers.ente-paste-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-paste-secure.rule=Host(`paste.domain.tld`)"
+      # - "traefik.http.routers.ente-paste-secure.tls=true"
+      # - "traefik.http.routers.ente-paste-secure.service=ente-web-paste"
+      # - "traefik.http.services.ente-web-paste.loadbalancer.server.port=3008"
+      # Locker
+      # - "traefik.http.routers.ente-locker.entrypoints=http"
+      # - "traefik.http.routers.ente-locker.rule=Host(`ente-locker.domain.tld`)"
+      # - "traefik.http.middlewares.ente-locker-https-redirect.redirectscheme.scheme=https"
+      # - "traefik.http.routers.ente-locker.middlewares=ente-locker-https-redirect"
+      # - "traefik.http.routers.ente-locker-secure.entrypoints=https"
+      # - "traefik.http.routers.ente-locker-secure.rule=Host(`ente-locker.domain.tld`)"
+      # - "traefik.http.routers.ente-locker-secure.tls=true"
+      # - "traefik.http.routers.ente-locker-secure.service=ente-web-locker"
+      # - "traefik.http.services.ente-web-locker.loadbalancer.server.port=3009"
+      - "traefik.docker.network=proxy"
+
+  postgres:
+    image: postgres:18-alpine
+    container_name: ente-postgres
+    restart: always
+    shm_size: 128mb
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - POSTGRES_USER=ente
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=ente_db
+    healthcheck:
+      test: pg_isready -q -d ente_db -U ente
+      start_period: 40s
+      start_interval: 1s
+    volumes:
+      - ./postgres:/var/lib/postgresql
+    networks:
+      - ente-net
+
+  garage:
+    image: dxflrs/garage:v2.3.0
+    container_name: ente-garage
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./garage.toml:/etc/garage.toml:ro
+      - ./garage-meta:/var/lib/garage/meta
+      - ./garage-data:/var/lib/garage/data
+    healthcheck:
+      test: ["CMD", "/garage", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - ente-net
+
+networks:
+  proxy:
+    external: true
+  ente-net:
+    external: true
