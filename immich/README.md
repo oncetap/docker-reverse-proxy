@@ -6,6 +6,9 @@
 ## Internal network for immich and its dedicated redis and postgres db
 `sudo docker network create --internal immich-net`
 
+## Network for machine learning outbound access (model downloads)
+`sudo docker network create immich-ml-net`
+
 ## Setup environment variables
 Move `example.env` to `.env`.
 

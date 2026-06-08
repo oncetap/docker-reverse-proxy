@@ -54,6 +54,7 @@ services:
       disable: false
     networks:
       - immich-net
+      - immich-ml-net
 
   redis:
     image: valkey/valkey:9-alpine
