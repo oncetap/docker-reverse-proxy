@@ -5,6 +5,10 @@ entryPoints:
     address: ":80"
   https:
     address: ":443"
+    transport:
+      respondingTimeouts:
+        readTimeout: 600s
+        idleTimeout: 600s
     http3: {}
   dot:
     address: ":853/tcp"

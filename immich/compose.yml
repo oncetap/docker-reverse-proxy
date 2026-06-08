@@ -1,0 +1,98 @@
+services:
+  immich-server:
+    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+    container_name: immich-server
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    # Hardware-accelerated transcoding, download the matching hwaccel.transcoding.yml
+    # from https://github.com/immich-app/immich/releases and uncomment below:
+    # extends:
+    #   file: hwaccel.transcoding.yml
+    #   service: quicksync    # cpu, nvenc, quicksync, rkmpp, vaapi, vaapi-wsl
+    volumes:
+      - ${UPLOAD_LOCATION}:/data
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    depends_on:
+      redis:
+        condition: service_healthy
+      database:
+        condition: service_healthy
+    healthcheck:
+      disable: false
+    networks:
+      - proxy
+      - immich-net
+    labels:
+      - "traefik.enable=true"
+      # HTTP
+      - "traefik.http.routers.immich.entrypoints=http"
+      - "traefik.http.routers.immich.rule=Host(`immich.domain.tld`)"
+      - "traefik.http.middlewares.immich-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.immich.middlewares=immich-https-redirect"
+      # HTTPS
+      - "traefik.http.routers.immich-secure.entrypoints=https"
+      - "traefik.http.routers.immich-secure.rule=Host(`immich.domain.tld`)"
+      - "traefik.http.routers.immich-secure.tls=true"
+      - "traefik.http.routers.immich-secure.service=immich-server-web"
+      - "traefik.http.services.immich-server-web.loadbalancer.server.port=2283"
+      - "traefik.docker.network=proxy"
+
+  immich-machine-learning:
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
+    container_name: immich-machine-learning
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./model-cache:/cache
+    env_file:
+      - .env
+    healthcheck:
+      disable: false
+    networks:
+      - immich-net
+
+  redis:
+    image: valkey/valkey:9-alpine
+    container_name: immich-redis
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: redis-cli ping || exit 1
+    volumes:
+      - ./redis:/data
+    networks:
+      - immich-net
+
+  database:
+    image: ghcr.io/immich-app/postgres:18-vectorchord0.5.3-pgvector0.8.1
+    container_name: immich-postgres
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    shm_size: 128mb
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_DB=${DB_DATABASE_NAME}
+      - POSTGRES_INITDB_ARGS=--data-checksums
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -q -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 30s
+      retries: 5
+      start_period: 20s
+      timeout: 5s
+    volumes:
+      - ${DB_DATA_LOCATION}:/var/lib/postgresql
+    networks:
+      - immich-net
+
+networks:
+  proxy:
+    external: true
+  immich-net:
+    external: true

@@ -22,3 +22,14 @@ ente/museum.yaml
 ente/garage.toml
 ente/data
 ente/.env
+
+immich/library
+immich/pgdata
+immich/redis
+immich/.env
+
+authentik/postgres
+authentik/data
+authentik/certs
+authentik/custom-templates
+authentik/.env
