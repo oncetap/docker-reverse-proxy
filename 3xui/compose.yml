@@ -1,0 +1,43 @@
+services:
+  3xui:
+    image: ghcr.io/mhsanaei/3x-ui:latest
+    container_name: 3xui
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./db/:/etc/x-ui/
+      - ./cert/:/root/cert/
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - XRAY_VMESS_AEAD_FORCED=false
+      - XUI_ENABLE_FAIL2BAN=false
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+
+      - "traefik.http.routers.3xui-http.entrypoints=http"
+      - "traefik.http.routers.3xui-http.rule=Host(`3xui.domain.tld`)"
+      - "traefik.http.middlewares.3xui-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.3xui-http.middlewares=3xui-https-redirect"
+      - "traefik.http.routers.3xui-http.service=3xui-web-svc"
+
+      - "traefik.http.routers.3xui-secure.entrypoints=https"
+      - "traefik.http.routers.3xui-secure.rule=Host(`3xui.domain.tld`)"
+      - "traefik.http.routers.3xui-secure.tls=true"
+      - "traefik.http.routers.3xui-secure.service=3xui-web-svc"
+      - "traefik.http.services.3xui-web-svc.loadbalancer.server.port=2053"
+
+      - "traefik.tcp.routers.3xui-reality.entrypoints=https"
+      - "traefik.tcp.routers.3xui-reality.rule=HostSNI(`aws.amazon.com`)"
+      - "traefik.tcp.routers.3xui-reality.tls=true"
+      - "traefik.tcp.routers.3xui-reality.tls.passthrough=true"
+      - "traefik.tcp.routers.3xui-reality.service=3xui-reality-svc"
+      - "traefik.tcp.services.3xui-reality-svc.loadbalancer.server.port=8443"
+
+networks:
+  proxy:
+    external: true
