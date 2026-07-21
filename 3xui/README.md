@@ -25,7 +25,9 @@ Goto `Inbounds > "+" icon button`
 
 ### Basics
 Remark: `VLESS REALITY` (Name for the Inbound, can be anything memorable and distinct)
+
 Protocol: `vless`
+
 Port: `8443`
 
 ### Protocol
@@ -36,7 +38,9 @@ Set `Transmission` to `RAW`. Make sure everything else is disabled on this tab.
 
 ### Security
 Set `Security` to `Reality`.
+
 Target: `aws.amazon.com:443`
+
 SNI: `aws.amazon.com`
 
 Scroll down and click `Get New Cert`
@@ -56,8 +60,11 @@ Goto `Hosts > "+" icon button`
 
 ### Basic (tab 1)
 Remark: `VLESS REALITY` (Can be the same as the Inbound's remark for less confusion)
+
 Inbounds: `Set to the Inbound you created earlier`
+
 Address: `stats.domain.tld` (Same as the DNS-only record you created earlier)
+
 Port: `443`
 
 ### Security (tab 2)
@@ -65,19 +72,20 @@ Make sure `Security` is set to `same`.
 
 ### Clash (Mihomo) [tab 4] **OPTIONAL**
 IP version: `ipv4-prefer`
+
 Enable both `Mihomo X25519` and `Shuffle host`
 
-
 And you're done. Once you finish all these steps, you can go back to the `Clients` tab
-and click the client you created earlier.
-Click the `3 vertical dots icon button > QR Code` and open the collapsible that has the tags `Vless` `TCP` `REALITY` then click the `Copy` icon button.
+and find the client you created earlier. From there, click the `3 vertical dots icon button > QR Code` and open the collapsible that has the tags `Vless` `TCP` `REALITY` then click the `Copy` icon button.
 
 You can import this configuration on an Xray client
 
-<b><u>Recommended clients</u></b>:
+<b><u>Recommended clients (Not endorsing them, I just found these clients to be the ones that work best)</u></b>:
 
 **Windows/Linux/MacOS**: [v2rayN](https://github.com/2dust/v2rayn)
+
 **Android**: [v2rayNG](https://github.com/2dust/v2rayng)
+
 **iOS**: [Hiddify](https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532)
 
 Afterwards, you should be able to browse normally like it's a normal VPN if everything is setup correctly.
