@@ -3,7 +3,7 @@
 ## Notice
 All configuration files are already pre-configured, edits are the only thing that's left to get their containers up and running.
 
-These containers are also expected to be run with `sudo` if you're not root, and outside of the home directory.
+These containers are also expected to be run with `sudo` if you're not root.
 
 ## Requirements
 - Certbot with Cloudflare DNS Plugin (`certbot-dns-cloudflare`<sup>AUR</sup>)
