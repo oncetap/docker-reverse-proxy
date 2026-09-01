@@ -1,12 +1,30 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: joseluisq/static-web-server:2
     container_name: apptest
     restart: unless-stopped
+    user: "1000:1000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.5
+    environment:
+      SERVER_ROOT: "/web"
+      SERVER_LOG_LEVEL: "warn"
+      SERVER_LOG_REMOTE_ADDRESS: "false"
+      SERVER_HEALTH: "true"
+      SERVER_COMPRESSION: "true"
+      SERVER_CACHE_CONTROL_HEADERS: "false"
+      SERVER_SECURITY_HEADERS: "false"
+      SERVER_GRACE_PERIOD: "10"
+      SERVER_MAX_BLOCKING_THREADS: "32"
+      SERVER_CORS_ALLOW_ORIGINS: "*"
     volumes:
-      - ./web:/web
+      - ./web:/web:ro
     networks:
       - proxy
     labels:
@@ -21,6 +39,11 @@ services:
       - "traefik.http.routers.app-secure.tls=true"
       - "traefik.http.routers.app-secure.tls.options=cloudflare-mtls@file"
       - "traefik.http.routers.app-secure.service=app"
+      # Security headers
+      - "traefik.http.middlewares.app-headers.headers.customresponseheaders.X-Frame-Options=DENY"
+      - "traefik.http.middlewares.app-headers.headers.customresponseheaders.X-Content-Type-Options=nosniff"
+      - "traefik.http.middlewares.app-headers.headers.customresponseheaders.Content-Security-Policy=frame-ancestors 'self'"
+      - "traefik.http.routers.app-secure.middlewares=app-headers"
       # HTTPS Redirect
       - "traefik.http.middlewares.app-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.app.middlewares=app-https-redirect"

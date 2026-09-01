@@ -37,6 +37,16 @@ Afterwards, run `sudo sysctl -p /etc/sysctl.d/99-buffer-size.conf`. This config 
   - `docker pull image:tag`
   - `docker compose pull`
 
+### Limit Docker logs
+This limits the log files for all Docker containers, with a default 20MB size limit and a maximum of 5 rotated files.
+
+`sudo nano /etc/docker/daemon.json`:
+```
+{
+  "log-driver": "local"
+}
+```
+
 ## Cloudflare
 DNS changes might take a few minutes to propagate, especially if TLS certificates are involved with a reverse proxy.
 
