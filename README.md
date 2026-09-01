@@ -40,11 +40,13 @@ Afterwards, run `sudo sysctl -p /etc/sysctl.d/99-buffer-size.conf`. This config 
 ### Limit Docker logs
 This limits the log files for all Docker containers, with a default 20MB size limit and a maximum of 5 rotated files.
 
-`sudo nano /etc/docker/daemon.json`:
 ```
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json > /dev/null <<'EOF'
 {
   "log-driver": "local"
 }
+EOF
 ```
 
 ## Cloudflare
