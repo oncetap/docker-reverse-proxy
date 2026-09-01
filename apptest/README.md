@@ -1,6 +1,4 @@
 # Setup
-## Optional Requirement
-- Docker Buildx (docker-buildx<sup>AUR</sup>)
 
 ## Cloudflare Origin Certificate
 Add a proxied A/AAAA record of `domain.tld` on `DNS > Records`.
